@@ -1,0 +1,24 @@
+# Backend build artifacts
+backend/build/
+backend/CMakeUserPresets.json
+
+# C/C++ build outputs
+*.obj
+*.o
+*.out
+*.exe
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+
+# Logs and temp files
+*.log
+*.tmp
+*.cache
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

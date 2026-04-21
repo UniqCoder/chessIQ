@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #2D2B2A;
+  --color-foreground: #FFFFFF;
+  
+  --color-primary: #85B54E;
+  --color-primary-foreground: #FFFFFF;
+  
+  --color-accent: #85B54E;
+  
+  --color-board-light: #52525b; /* zinc-600 */
+  --color-board-dark: #27272a;  /* zinc-800 */
+  --color-board-highlight: rgba(133, 181, 78, 0.4);
+  
+  --color-surface: #4A4846;
+  --color-surface-hover: #5A5856;
+  --color-surface-border: #3A3836;
+}
+
+@layer base {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+}
+
+.glass-panel {
+  background: rgba(23, 23, 23, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.chess-square-light {
+  background-color: var(--color-board-light);
+}
+
+.chess-square-dark {
+  background-color: var(--color-board-dark);
+}
+
+.premium-gradient {
+  background: linear-gradient(135deg, #262626 0%, #0a0a0a 100%);
+}
