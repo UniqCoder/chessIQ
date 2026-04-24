@@ -58,6 +58,10 @@ Here are all the cool features we added and the special **Data Structures** we u
 * **What it does:** Before, when you clicked "Sign Up", the website got confused and tried to "Sign In" to an account that didn't exist yet! 
 * **The Data Structure:** We used a **Boolean**. A boolean is like a light switch—it can only be ON (True) or OFF (False). If the switch is ON, we show the Sign In door. If we flip the switch to OFF, we show the Sign Up door!
 
+### 7. Rotating the Board 🔄
+* **What it does:** When it becomes Black's turn to play, the entire chess board spins around so you are always looking at the board from the active player's point of view!
+* **The Data Structure:** We used another **Boolean**. If `isWhiteTurn` is `false`, we flip the `isFlipped` boolean switch to `true` to spin the board around.
+
 ---
 
 ## 🍎 For the Teachers: Data Types vs Data Structures & Core Logic
@@ -73,8 +77,10 @@ Here is exactly how we used both Data Types and Data Structures, and the logic w
   * *The Logic:* We used JavaScript's `setInterval` function to create a countdown loop. Every 1000 milliseconds, our logic subtracts `1` from the active player's Number state. If the number reaches `0`, an `if` statement triggers a "win on time" function and halts the game.
 * **Strings (Resign/Draw & Match Status):**
   * *The Logic:* Strings are used as exact state identifiers. Our logic constantly checks the `status` string. If the string equals `"in_progress"`, the board accepts clicks. If a player clicks "Resign", we overwrite that string with `"white_wins_by_resignation"`. Our UI logic reads this new string and instantly locks the board and displays the winner.
-* **Booleans (Login Toggle):**
-  * *The Logic:* Booleans act as binary flags (`true` or `false`). We read the URL parameter; if it says `tab=signup`, we set our `isLogin` boolean to `false`. Our React UI uses a "ternary operator" (a simple if/then rule) to decide which form to render: `isLogin ? showSignIn : showSignUp`.
+* **Booleans (Login Toggle & Board Rotation):**
+  * *The Logic:* Booleans act as binary flags (`true` or `false`). 
+    * For the **Login Toggle**: We read the URL parameter; if it says `tab=signup`, we set our `isLogin` boolean to `false`. Our React UI uses a "ternary operator" (a simple if/then rule) to decide which form to render: `isLogin ? showSignIn : showSignUp`.
+    * For the **Board Rotation**: We use a boolean called `isFlipped`. If the current turn is Black, `isFlipped` becomes `true`. Our React logic then reverses the row and column order when drawing the 64 squares, and visually swaps the positions of the top and bottom Player Cards!
 
 ### Data Structures (The Organizers)
 * **Arrays (Move History):**
