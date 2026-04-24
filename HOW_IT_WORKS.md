@@ -89,4 +89,38 @@ Here is exactly how we used both Data Types and Data Structures, and the logic w
   * *The Logic:* Objects allow for instant key-value lookups. We created an Object that maps chess pieces to their point values (e.g., `{'q': 9, 'r': 5}`). Our logic loops through the board state, counts missing pieces, and instantly looks up their values in our Object to calculate a mathematical total for the "Material Advantage" score.
 
 ---
+
+## 💻 The Code Cheat Sheet (If Teachers Ask to See the Code!)
+
+If the teachers say: *"Open your code and show us how you built this!"* — don't panic! Here is the exact logic we wrote for every feature, explained simply so you can point right at the screen and explain it.
+
+### 1. The React Hooks (`useState` and `useEffect`)
+* **What to point at:** The top of `src/app/play/page.tsx` where you see `const [fen, setFen] = useState(...)`.
+* **What to say:** "We used React hooks! `useState` is like the computer's short-term memory—it remembers whose turn it is and how much time is left. `useEffect` is a rule that says 'When X changes, automatically do Y' (like when the turn changes, automatically flip the board)."
+
+### 2. The Timers (`setInterval`)
+* **What to point at:** The `useEffect` block containing `setInterval` in the play page.
+* **What to say:** "We wrote a `setInterval` loop that triggers every 1000 milliseconds (1 second). It checks a boolean `isWhiteTurn`. If true, it grabs White's timer number and subtracts 1. If the timer hits exactly `0`, we immediately call the `handleTimeout()` function to end the game!"
+
+### 3. Move History (`.map()`)
+* **What to point at:** The `groupedHistory.map(...)` code near the bottom of the play page.
+* **What to say:** "Every time a valid move is played, we use `.push()` to add the move's string (like 'e4') to our `moveHistory` Array. Down here in the UI, we use the JavaScript `.map()` function. `.map()` works like a printing press—it loops over every item in the array and prints a new HTML row on the screen for each move."
+
+### 4. Material Advantage (Counting Pieces)
+* **What to point at:** The `getMaterial(fen)` function near the top of the play page.
+* **What to say:** "The board is saved as a long string of letters called a FEN (where 'Q' is a White Queen and 'q' is a Black queen). Our `getMaterial` function reads this string character by character. If it sees a 'Q' is missing from the starting count, it looks up the Queen in our point Object (worth 9 points) and gives 9 points to Black. It subtracts the totals to find out exactly who is winning mathematically!"
+
+### 5. Resign and Draw (`onClick`)
+* **What to point at:** The `handleResign` function and the `<button onClick={handleResign}>`.
+* **What to say:** "We attached an `onClick` event listener to the button. When clicked, it fires the `handleResign` function. Inside this function, we write a new string over the game's `status` variable. For example, if White resigns, we change the status string to `black_wins_by_resignation`. The React UI sees this new string and instantly locks the board!"
+
+### 6. Rotating the Board (`isFlipped`)
+* **What to point at:** The `<ChessBoard isFlipped={isFlipped} />` component.
+* **What to say:** "We pass a boolean flag called `isFlipped` into the board. Inside the `ChessBoard` file, we draw the 64 squares using a `for` loop. If `isFlipped` is true, we reverse the math in our loop so it draws row 1 at the top instead of the bottom. We also swap the position of the Player Cards in the layout based on this exact same boolean!"
+
+### 7. The C++ Brain API
+* **What to point at:** The `handleMove` function where it says `fetch('/api/chess', ...)`
+* **What to say:** "This is our Node.js Secret Mailman! When a player tries to move, we send a JSON package to `/api/chess` containing the starting square and ending square. Node.js sends this to our custom C++ game engine, which uses complex math to check if the path is blocked. The C++ engine replies 'valid' or 'invalid', and Node.js hands that answer right back to React!"
+
+---
 *And that is how we built the most amazing chess website ever!* 🌟
