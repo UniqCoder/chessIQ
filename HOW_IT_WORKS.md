@@ -59,4 +59,28 @@ Here are all the cool features we added and the special **Data Structures** we u
 * **The Data Structure:** We used a **Boolean**. A boolean is like a light switch—it can only be ON (True) or OFF (False). If the switch is ON, we show the Sign In door. If we flip the switch to OFF, we show the Sign Up door!
 
 ---
+
+## 🍎 For the Teachers: Data Types vs Data Structures & Core Logic
+
+If you are explaining this project to a teacher, they might ask: *"Wait, are numbers and strings actually data structures?"* 
+
+The correct answer is **No!** Numbers, Strings, and Booleans are **Primitive Data Types**. They are the fundamental, basic ingredients of programming. **Arrays and Objects**, however, are **Data Structures**—they are containers used to organize and store those basic ingredients in complex ways. 
+
+Here is exactly how we used both Data Types and Data Structures, and the logic written for them:
+
+### Primitive Data Types (The Ingredients)
+* **Numbers (Timers):** 
+  * *The Logic:* We used JavaScript's `setInterval` function to create a countdown loop. Every 1000 milliseconds, our logic subtracts `1` from the active player's Number state. If the number reaches `0`, an `if` statement triggers a "win on time" function and halts the game.
+* **Strings (Resign/Draw & Match Status):**
+  * *The Logic:* Strings are used as exact state identifiers. Our logic constantly checks the `status` string. If the string equals `"in_progress"`, the board accepts clicks. If a player clicks "Resign", we overwrite that string with `"white_wins_by_resignation"`. Our UI logic reads this new string and instantly locks the board and displays the winner.
+* **Booleans (Login Toggle):**
+  * *The Logic:* Booleans act as binary flags (`true` or `false`). We read the URL parameter; if it says `tab=signup`, we set our `isLogin` boolean to `false`. Our React UI uses a "ternary operator" (a simple if/then rule) to decide which form to render: `isLogin ? showSignIn : showSignUp`.
+
+### Data Structures (The Organizers)
+* **Arrays (Move History):**
+  * *The Logic:* Arrays maintain a strict, ordered sequence. When the C++ backend confirms a move is valid, it returns the move's notation. We use the `.push()` array method to append this new string to the very end of our history array. React then loops over this array to print the chronological story of the game on the right-hand panel.
+* **Objects / Hash Maps (Material Advantage):**
+  * *The Logic:* Objects allow for instant key-value lookups. We created an Object that maps chess pieces to their point values (e.g., `{'q': 9, 'r': 5}`). Our logic loops through the board state, counts missing pieces, and instantly looks up their values in our Object to calculate a mathematical total for the "Material Advantage" score.
+
+---
 *And that is how we built the most amazing chess website ever!* 🌟
