@@ -12,9 +12,9 @@ To build a computer game, you need special tools. Think of these like your favor
 * **Framer Motion (The Animator):** This is what makes things fly, slide, and bounce on the screen when you open the website. It brings the website to life!
 * **C++ (The Chess Grandmaster Brain):** Deep down inside the computer, there is a super-fast brain written in a language called C++ that knows all the rules of chess.
 
-### 🌐 The Secret Mailman (Node.js Internal API)
+### 🌐 The Secret Mailman (Our Node.js Backend Server)
 * **What it does:** Have you ever wondered how our shiny website (Next.js) talks to the super-smart C++ brain? They don't speak the exact same language!
-* **How it works:** We used **Node.js** as a "Secret Mailman." When you click a chess piece, the website gives a letter to Node.js. Node.js sneaks through a secret tunnel *inside* your computer (without even using the internet!) and hands the letter to the C++ brain. The C++ brain figures out if the move is allowed, writes a reply, and Node.js brings the answer right back to the website instantly! This is called an **Internal Routing API**.
+* **How it works:** We use **Node.js** as our **Backend Server** (the "Secret Mailman"). Yes, Node.js is our actual backend! When you click a chess piece on the frontend, the website sends a message to Node.js. Node.js sneaks through a secret tunnel *inside* your computer and hands the letter to the C++ core engine. The C++ engine figures out if the move is allowed, writes a reply, and Node.js brings the answer right back to the website instantly! This is how Node.js acts as an **Internal Routing API Backend**.
 
 ---
 
@@ -133,8 +133,8 @@ If you need to quickly list all the exact technologies used to build this platfo
 * **Styling:** Tailwind CSS (for the Glassmorphism design system)
 * **Animations:** Framer Motion
 * **Authentication & Database:** Supabase
-* **Internal API / Server:** Node.js (via Next.js API Routes)
-* **Game Engine / Backend:** Custom C++ 
+* **Backend API Server:** Node.js (via Next.js API Routes)
+* **Core Game Engine / Microservice:** Custom C++ 
 * **Language:** TypeScript & C++
 
 ---
