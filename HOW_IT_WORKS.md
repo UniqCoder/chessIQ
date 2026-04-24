@@ -123,4 +123,19 @@ If the teachers say: *"Open your code and show us how you built this!"* — don'
 * **What to say:** "This is our Node.js Secret Mailman! When a player tries to move, we send a JSON package to `/api/chess` containing the starting square and ending square. Node.js sends this to our custom C++ game engine, which uses complex math to check if the path is blocked. The C++ engine replies 'valid' or 'invalid', and Node.js hands that answer right back to React!"
 
 ---
+
+## 🧰 The Complete Tech Stack List
+
+If you need to quickly list all the exact technologies used to build this platform, here is the full professional tech stack:
+
+* **Frontend Framework:** Next.js 16 (App Router)
+* **UI Library:** React (using functional components and hooks like `useState`, `useEffect`)
+* **Styling:** Tailwind CSS (for the Glassmorphism design system)
+* **Animations:** Framer Motion
+* **Authentication & Database:** Supabase
+* **Internal API / Server:** Node.js (via Next.js API Routes)
+* **Game Engine / Backend:** Custom C++ 
+* **Language:** TypeScript & C++
+
+---
 *And that is how we built the most amazing chess website ever!* 🌟
