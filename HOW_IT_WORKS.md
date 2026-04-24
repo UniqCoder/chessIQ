@@ -140,7 +140,7 @@ If you need to quickly list all the exact technologies used to build this platfo
 * **Styling:** Tailwind CSS (for the Glassmorphism design system)
 * **Animations:** Framer Motion
 * **Authentication & Database:** Supabase
-* **Backend API Server:** Node.js (via Next.js API Routes)
+* **Backend API Server:** Node.js (via Next.js API Routes) as a bridge and cpp for core backend as our brain
 * **Core Game Engine / Microservice:** Custom C++ 
 * **Language:** TypeScript & C++
 
