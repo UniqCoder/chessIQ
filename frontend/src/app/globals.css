@@ -1,27 +1,27 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #2D2B2A;
+  --color-background: #0a0a0f;
   --color-foreground: #FFFFFF;
   
-  --color-primary: #85B54E;
-  --color-primary-foreground: #FFFFFF;
+  --color-primary: #d4af37;
+  --color-primary-foreground: #0a0a0f;
   
-  --color-accent: #85B54E;
+  --color-accent: #f59e0b;
   
-  --color-board-light: #52525b; /* zinc-600 */
-  --color-board-dark: #27272a;  /* zinc-800 */
-  --color-board-highlight: rgba(133, 181, 78, 0.4);
+  --color-board-light: #ebecd0; /* Classic cream */
+  --color-board-dark: #779556;  /* Classic green */
+  --color-board-highlight: rgba(245, 158, 11, 0.4); /* Amber highlight */
   
-  --color-surface: #4A4846;
-  --color-surface-hover: #5A5856;
-  --color-surface-border: #3A3836;
+  --color-surface: rgba(255, 255, 255, 0.05);
+  --color-surface-hover: rgba(255, 255, 255, 0.1);
+  --color-surface-border: rgba(255, 255, 255, 0.1);
 }
 
 @layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0a0a0f;
+    --foreground: #ffffff;
   }
   body {
     background-color: var(--background);
@@ -31,20 +31,23 @@
 }
 
 .glass-panel {
-  background: rgba(23, 23, 23, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
 }
 
 .chess-square-light {
   background-color: var(--color-board-light);
+  color: var(--color-board-dark); /* for coordinates */
 }
 
 .chess-square-dark {
   background-color: var(--color-board-dark);
+  color: var(--color-board-light); /* for coordinates */
 }
 
 .premium-gradient {
-  background: linear-gradient(135deg, #262626 0%, #0a0a0a 100%);
+  background: linear-gradient(135deg, #0a0a0f 0%, #050508 100%);
 }

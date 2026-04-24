@@ -2,11 +2,11 @@ import { NextRequest, NextResponse } from 'next/server';
 import { spawn } from 'child_process';
 import path from 'path';
 
-export async function POST(req: NextRequest) {
+export async function POST(req: NextRequest): Promise<NextResponse> {
   try {
     const body = await req.json();
     
-    return new Promise((resolve) => {
+    return new Promise<NextResponse>((resolve) => {
       // Use ENGINE_BINARY_PATH from env, or default to relative path
       const exePath = process.env.ENGINE_BINARY_PATH 
         ? path.resolve(process.cwd(), process.env.ENGINE_BINARY_PATH)
