@@ -12,6 +12,10 @@ To build a computer game, you need special tools. Think of these like your favor
 * **Framer Motion (The Animator):** This is what makes things fly, slide, and bounce on the screen when you open the website. It brings the website to life!
 * **C++ (The Chess Grandmaster Brain):** Deep down inside the computer, there is a super-fast brain written in a language called C++ that knows all the rules of chess.
 
+### 🌐 The Secret Mailman (Node.js Internal API)
+* **What it does:** Have you ever wondered how our shiny website (Next.js) talks to the super-smart C++ brain? They don't speak the exact same language!
+* **How it works:** We used **Node.js** as a "Secret Mailman." When you click a chess piece, the website gives a letter to Node.js. Node.js sneaks through a secret tunnel *inside* your computer (without even using the internet!) and hands the letter to the C++ brain. The C++ brain figures out if the move is allowed, writes a reply, and Node.js brings the answer right back to the website instantly! This is called an **Internal Routing API**.
+
 ---
 
 ## 🎨 Our Beautiful UI (How it Looks)
@@ -29,30 +33,30 @@ We also looked at big, professional chess websites (like Chess.com) to learn the
 
 ## 🛠️ What We Built (From A to Z!)
 
-Here are all the cool features we added and the "data structures" (which are just special ways computers hold onto things, like toy boxes) we used for them:
+Here are all the cool features we added and the special **Data Structures** we used. A data structure is just a fancy computer toy box that holds information in a specific shape so it's easy to find!
 
 ### 1. The Super Timers ⏱️
 * **What it does:** When it's your turn, your timer ticks down! When you finish your turn, your timer pauses and the other person's timer starts.
-* **How it works:** We used something called `setInterval` (think of it like a tiny robot that taps your shoulder every single second to count down). We stored the time in simple **Numbers**.
+* **The Data Structure:** We used simple **Numbers**. Numbers help us do math really fast, like subtracting 1 second every time the clock ticks.
 
 ### 2. The Move History (The Game Story) 📖
 * **What it does:** Every time you move a piece, it writes down what you did (like "Nf3" for moving a Knight).
-* **How it works:** We used an **Array** (which is just a long list, like a grocery list!). Every time you move, we add a new word to the bottom of the list.
+* **The Data Structure:** We used an **Array**. An Array is exactly like a line of train cars. Every time you make a move, we build a new train car and attach it to the very end of the train! This helps us keep all your moves in the exact perfect order.
 
 ### 3. Material Advantage (Counting the Candies) 🍬
 * **What it does:** It tells you who is winning by counting the pieces you've eaten! If you ate more of the enemy's pieces, it shows a cool "+3" next to your name.
-* **How it works:** We used a **Dictionary (or Object)**. It's like having a bunch of buckets with labels. We have a bucket for "Knights," a bucket for "Queens," and we just count how many are missing from the board!
+* **The Data Structure:** We used an **Object (or Dictionary)**. Imagine a big shelf with labeled cubbies. We have a cubby labeled "Knights," one for "Queens," and one for "Pawns." We just look inside the cubby to count how many pieces are missing from the board! It helps us look things up instantly without having to count every single piece one by one.
 
 ### 4. Resign and Draw Buttons 🏳️
 * **What it does:** If you are losing really badly, you can press "Resign" to give up, or "Draw" to ask for a tie.
-* **How it works:** We just change the "Status" of the game (a simple **String**, which is a word) to say `"white_wins_by_resignation"`. The computer sees this word and stops the game!
+* **The Data Structure:** We used a **String**. A string is just a word or a sentence. We change the game's secret status word to `"white_wins_by_resignation"`. The computer reads this word and immediately knows the game is over!
 
 ### 5. Perfect Sizing (Making it Fit!) 📏
 * **What it does:** We made sure the chess board and the side boxes were the exact same height, so it looks perfectly neat and tidy without having to scroll up and down.
 
 ### 6. Fixing the Login Door 🚪
 * **What it does:** Before, when you clicked "Sign Up", the website got confused and tried to "Sign In" to an account that didn't exist yet! 
-* **How it works:** We told the website to look at the link you clicked. If the link said "signup", we told the computer's memory (using a true/false switch called a **Boolean**) to show the Sign Up screen instead!
+* **The Data Structure:** We used a **Boolean**. A boolean is like a light switch—it can only be ON (True) or OFF (False). If the switch is ON, we show the Sign In door. If we flip the switch to OFF, we show the Sign Up door!
 
 ---
 *And that is how we built the most amazing chess website ever!* 🌟
